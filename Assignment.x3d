@@ -1,0 +1,604 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D 3.0//EN" "http://www.web3d.org/specifications/x3d-3.0.dtd">
+<X3D xmlns:xsd='http://www.w3.org/2001/XMLSchema-instance' profile='Full' version='3.0' xsd:noNamespaceSchemaLocation='http://www.web3d.org/specifications/x3d-3.0.xsd'>
+  <Scene DEF='scene'>
+    <WorldInfo info='"Author: Ana Maria Lisboa dos Santos Cotovio"' title='Cinema'/>
+    <Background skyColor='0.098 0.772 1'/>
+    <Transform DEF='World'>
+      <Transform DEF='Welcome' scale='7 7 7' translation='-15 25 0'>
+        <TouchSensor DEF='WelcomeTS'/>
+        <Switch DEF='WelcomeSw' whichChoice='0'>
+          <Transform DEF='WelcomeText'>
+            <Shape>
+              <Appearance>
+                <Material diffuseColor='0.396 0.117 0.219'/>
+              </Appearance>
+              <Text string='"Welcome to" "the Cinema!"'/>
+            </Shape>
+          </Transform>
+          <Transform DEF='WelcomeButton' translation='0.1 -2.5 3.052'>
+            <Shape>
+              <Appearance>
+                <Material diffuseColor='1 1 1'/>
+              </Appearance>
+              <Box size='0.3 0.3 0.3'/>
+            </Shape>
+            <Transform DEF='WelcomeButtonText' scale='0.3 0.3 0.3' translation='-0.7 -0.4 0'>
+              <Shape>
+                <Appearance>
+                  <Material diffuseColor='1 1 1'/>
+                </Appearance>
+                <Text string='"Press to put" "the Text back"'/>
+              </Shape>
+            </Transform>
+          </Transform>
+        </Switch>
+      </Transform>
+      <Transform DEF='Room'>
+        <Transform DEF='Walls'>
+          <Transform DEF='LeftWall' translation='-20 0 -5'>
+            <Shape>
+              <Appearance>
+                <Material diffuseColor='0.141 0.145 0.149'/>
+              </Appearance>
+              <Box size='0.5 20 50'/>
+            </Shape>
+          </Transform>
+          <Transform DEF='RightWall' translation='20 0 0'>
+            <Transform DEF='UpperPart' translation='0 4.65 -5'>
+              <Shape>
+                <Appearance>
+                  <Material diffuseColor='0.141 0.145 0.149'/>
+                </Appearance>
+                <Box size='0.5 10.7 50'/>
+              </Shape>
+            </Transform>
+            <Transform DEF='BackPart' translation='0 -5 1.5'>
+              <Shape>
+                <Appearance>
+                  <Material diffuseColor='0.141 0.145 0.149'/>
+                </Appearance>
+                <Box size='0.5 9.4 37'/>
+              </Shape>
+            </Transform>
+            <Transform DEF='FrontPart' translation='0 -5 -26.5'>
+              <Shape>
+                <Appearance>
+                  <Material diffuseColor='0.141 0.145 0.149'/>
+                </Appearance>
+                <Box size='0.5 9.4 7'/>
+              </Shape>
+            </Transform>
+          </Transform>
+          <Transform DEF='FrontWall' rotation='0 1 0 1.57' translation='0 0 -30'>
+            <Shape>
+              <Appearance>
+                <Material diffuseColor='0.141 0.145 0.149'/>
+              </Appearance>
+              <Box size='0.5 20 40'/>
+            </Shape>
+          </Transform>
+          <Transform DEF='BackWall' translation='0 0 50'>
+            <Transform USE='FrontWall'/>
+          </Transform>
+        </Transform>
+        <Transform DEF='RoofFloor'>
+          <Transform DEF='Floor' rotation='0 0 1 1.57' translation='0 -10 -5'>
+            <Shape>
+              <Appearance>
+                <Material diffuseColor='0.396 0.117 0.219'/>
+              </Appearance>
+              <Box size='0.5 40 50'/>
+            </Shape>
+          </Transform>
+          <Transform DEF='Roof'>
+            <TouchSensor DEF='RoofTS'/>
+            <Switch DEF='RoofSw' whichChoice='0'>
+              <Transform DEF='TheRoof' translation='0 20 0'>
+                <Transform USE='Floor'/>
+              </Transform>
+              <Transform DEF='RoofButton' scale='7 7 7' translation='14 7.5 21.3'>
+                <Shape>
+                  <Appearance>
+                    <Material diffuseColor='1 1 1'/>
+                  </Appearance>
+                  <Box size='0.3 0.3 0.3'/>
+                </Shape>
+                <Transform DEF='RoofButtonText' scale='0.3 0.3 0.3' translation='-0.75 -0.4 0'>
+                  <Shape>
+                    <Appearance>
+                      <Material diffuseColor='1 1 1'/>
+                    </Appearance>
+                    <Text string='"Press to put" "the Roof back"'/>
+                  </Shape>
+                </Transform>
+              </Transform>
+            </Switch>
+          </Transform>
+        </Transform>
+        <Transform DEF='TheDoor'>
+          <TouchSensor DEF='DoorTo'/>
+          <Switch DEF='DoorSw' whichChoice='0'>
+            <Transform DEF='Open' rotation='0 1 0 1.57' translation='43 0 -3'>
+              <Transform translation='20 -5.2 -20'>
+                <Shape>
+                  <Appearance>
+                    <Material diffuseColor='0.396 0.262 0.129'/>
+                  </Appearance>
+                  <Box size='0.7 9 6'/>
+                </Shape>
+                <Transform rotation='0 0 1 1.57' translation='0 0 2'>
+                  <Shape>
+                    <Appearance>
+                      <ImageTexture url='"DoorKnobColour.jpg"'/>
+                    </Appearance>
+                    <Cylinder height='1' radius='0.15'/>
+                  </Shape>
+                  <Transform DEF='AOPT_Transform_28657952' translation='0 0.65 0'>
+                    <Shape>
+                      <Appearance>
+                        <ImageTexture url='"DoorKnobColour.jpg"'/>
+                      </Appearance>
+                      <Sphere radius='0.2'/>
+                    </Shape>
+                  </Transform>
+                  <Transform translation='0 -1.33 0'>
+                    <Transform USE='AOPT_Transform_28657952'/>
+                  </Transform>
+                </Transform>
+              </Transform>
+            </Transform>
+            <Transform DEF='Close'>
+              <Transform DEF='Door' translation='20 -5.2 -20'>
+                <Shape>
+                  <Appearance>
+                    <Material diffuseColor='0.396 0.262 0.129'/>
+                  </Appearance>
+                  <Box size='0.7 9 6'/>
+                </Shape>
+                <Transform DEF='DoorKnob' rotation='0 0 1 1.57' translation='0 0 2'>
+                  <Shape>
+                    <Appearance>
+                      <ImageTexture url='"DoorKnobColour.jpg"'/>
+                    </Appearance>
+                    <Cylinder height='1' radius='0.15'/>
+                  </Shape>
+                  <Transform DEF='KnobInside' translation='0 0.65 0'>
+                    <Shape>
+                      <Appearance>
+                        <ImageTexture url='"DoorKnobColour.jpg"'/>
+                      </Appearance>
+                      <Sphere radius='0.2'/>
+                    </Shape>
+                  </Transform>
+                  <Transform DEF='KnobOutside' translation='0 -1.33 0'>
+                    <Transform USE='KnobInside'/>
+                  </Transform>
+                </Transform>
+              </Transform>
+            </Transform>
+          </Switch>
+        </Transform>
+        <Transform DEF='Stairs'>
+          <Transform DEF='Step1' translation='0 -9 -8'>
+            <Shape>
+              <Appearance>
+                <Material diffuseColor='0.141 0.145 0.149'/>
+              </Appearance>
+              <Box size='40 1 8'/>
+            </Shape>
+          </Transform>
+          <Transform DEF='Step2' translation='0 -8 0'>
+            <Shape>
+              <Appearance>
+                <Material diffuseColor='0.141 0.145 0.149'/>
+              </Appearance>
+              <Box size='40 2 8'/>
+            </Shape>
+          </Transform>
+          <Transform DEF='Step3' translation='0 -7 8'>
+            <Shape>
+              <Appearance>
+                <Material diffuseColor='0.141 0.145 0.149'/>
+              </Appearance>
+              <Box size='40 3 8'/>
+            </Shape>
+          </Transform>
+          <Transform DEF='Step4' translation='0 -6 16'>
+            <Shape>
+              <Appearance>
+                <Material diffuseColor='0.141 0.145 0.149'/>
+              </Appearance>
+              <Box size='40 4 8'/>
+            </Shape>
+          </Transform>
+        </Transform>
+        <Transform DEF='Chairs'>
+          <Transform DEF='Line1'>
+            <Transform DEF='Chair1'>
+              <Transform DEF='Seat' translation='8 -8 -6'>
+                <Shape>
+                  <Appearance>
+                    <Material diffuseColor='0.396 0.117 0.219'/>
+                  </Appearance>
+                  <Box size='8 2 4'/>
+                </Shape>
+              </Transform>
+              <Transform DEF='Back' rotation='1 0 0 1.57' translation='8 -5 -4.5'>
+                <Shape>
+                  <Appearance>
+                    <Material diffuseColor='0.396 0.117 0.219'/>
+                  </Appearance>
+                  <Box size='4 1 4'/>
+                </Shape>
+              </Transform>
+              <Transform DEF='ArmRight' rotation='1 0 0 1.57' translation='11 -6 -6'>
+                <Shape>
+                  <Appearance>
+                    <Material diffuseColor='0.396 0.117 0.219'/>
+                  </Appearance>
+                  <Cylinder height='4'/>
+                </Shape>
+              </Transform>
+              <Transform DEF='ArmLeft' rotation='1 0 0 1.57' translation='5 -6 -6'>
+                <Shape>
+                  <Appearance>
+                    <Material diffuseColor='0.396 0.117 0.219'/>
+                  </Appearance>
+                  <Cylinder height='4'/>
+                </Shape>
+              </Transform>
+            </Transform>
+            <Transform DEF='Chair2' translation='-8 0 0'>
+              <Transform USE='Chair1'/>
+            </Transform>
+            <Transform DEF='Chair3' translation='-8 0 0'>
+              <Transform USE='Chair2'/>
+            </Transform>
+          </Transform>
+          <Transform DEF='Line2' translation='0 2 8'>
+            <Transform USE='Line1'/>
+          </Transform>
+          <Transform DEF='Line3' translation='0 2 8'>
+            <Transform USE='Line2'/>
+          </Transform>
+          <Transform DEF='Line4' translation='0 2 8'>
+            <Transform USE='Line3'/>
+          </Transform>
+        </Transform>
+        <Transform DEF='Portraits'>
+          <Transform DEF='PortraitsLeft'>
+            <Transform translation='-19.5 3 5'>
+              <Transform>
+                <Shape>
+                  <Appearance>
+                    <Material diffuseColor='0.396 0.262 0.129'/>
+                  </Appearance>
+                  <Box size='0.1 5.2 3.7'/>
+                </Shape>
+              </Transform>
+              <Transform translation='0.05 0 0'>
+                <Shape>
+                  <Appearance>
+                    <ImageTexture url='"JohnnyDepp.jpg"'/>
+                  </Appearance>
+                  <Box size='0.03 5 3.5'/>
+                </Shape>
+              </Transform>
+            </Transform>
+            <Transform translation='-19.5 3 -15'>
+              <Transform>
+                <Shape>
+                  <Appearance>
+                    <Material diffuseColor='0.396 0.262 0.129'/>
+                  </Appearance>
+                  <Box size='0.1 5.2 3.7'/>
+                </Shape>
+              </Transform>
+              <Transform translation='0.05 0 0'>
+                <Shape>
+                  <Appearance>
+                    <ImageTexture url='"WillSmith.jpg"'/>
+                  </Appearance>
+                  <Box size='0.03 5 3.5'/>
+                </Shape>
+              </Transform>
+            </Transform>
+          </Transform>
+          <Transform DEF='PortraitsRight' rotation='0 1 0 3.14' translation='0 0 -3'>
+            <Transform DEF='Portrait1' translation='-19.5 3 5'>
+              <Transform DEF='Frame1'>
+                <Shape>
+                  <Appearance>
+                    <Material diffuseColor='0.396 0.262 0.129'/>
+                  </Appearance>
+                  <Box size='0.1 5.2 3.7'/>
+                </Shape>
+              </Transform>
+              <Transform DEF='Picture1' translation='0.05 0 0'>
+                <Shape>
+                  <Appearance>
+                    <ImageTexture url='"MarylStreep.jpg"'/>
+                  </Appearance>
+                  <Box size='0.03 5 3.5'/>
+                </Shape>
+              </Transform>
+            </Transform>
+            <Transform DEF='Portrait2' translation='-19.5 3 -15'>
+              <Transform DEF='Frame2'>
+                <Shape>
+                  <Appearance>
+                    <Material diffuseColor='0.396 0.262 0.129'/>
+                  </Appearance>
+                  <Box size='0.1 5.2 3.7'/>
+                </Shape>
+              </Transform>
+              <Transform DEF='Picture2' translation='0.05 0 0'>
+                <Shape>
+                  <Appearance>
+                    <ImageTexture url='"JuliaRoberts.jpg"'/>
+                  </Appearance>
+                  <Box size='0.03 5 3.5'/>
+                </Shape>
+              </Transform>
+            </Transform>
+          </Transform>
+        </Transform>
+        <Transform DEF='Screen' translation='0 0 -29.5'>
+          <TouchSensor DEF='MovieTo'/>
+          <Shape>
+            <Appearance>
+              <MovieTexture DEF='Movie' stopTime='1' loop='true' url='"ScoobyDooTheme.mpeg"'/>
+            </Appearance>
+            <Box size='30 15 0.1'/>
+          </Shape>
+        </Transform>
+        <Transform DEF='Lights'>
+          <Transform DEF='WhiteLights'>
+            <Transform DEF='WLight1' translation='-19 9 19'>
+              <Shape>
+                <Appearance>
+                  <Material diffuseColor='1 1 0.929' emissiveColor='1 1 0.929'/>
+                </Appearance>
+                <Sphere/>
+              </Shape>
+              <PointLight DEF='WhiteLightPL' on='false' color='1 1 0.929' radius='1'/>
+            </Transform>
+            <Transform DEF='WLight2' translation='0 0 -48'>
+              <Transform USE='WLight1'/>
+            </Transform>
+            <Transform DEF='WLight3' translation='38 0 0'>
+              <Transform USE='WLight2'/>
+            </Transform>
+            <Transform DEF='WLight4' translation='38 0 0'>
+              <Transform USE='WLight1'/>
+            </Transform>
+          </Transform>
+          <Transform DEF='BlueLights'>
+            <Transform DEF='BLine1'>
+              <Transform DEF='BLight1' translation='0 -8.5 -11.5'>
+                <Shape>
+                  <Appearance>
+                    <Material diffuseColor='0 0.094 0.976' emissiveColor='0 0.094 0.976'/>
+                  </Appearance>
+                  <Box size='0.5 0.1 0.5'/>
+                </Shape>
+                <PointLight DEF='BlueLightPL' color='0 0.094 0.976' intensity='0.5' radius='1'/>
+              </Transform>
+              <Transform DEF='BLight2' translation='2 0 0'>
+                <Transform USE='BLight1'/>
+              </Transform>
+              <Transform DEF='BLight3' translation='2 0 0'>
+                <Transform USE='BLight2'/>
+              </Transform>
+              <Transform DEF='BLight4' translation='2 0 0'>
+                <Transform USE='BLight3'/>
+              </Transform>
+              <Transform DEF='BLight5' translation='2 0 0'>
+                <Transform USE='BLight4'/>
+              </Transform>
+              <Transform DEF='BLight6' translation='2 0 0'>
+                <Transform USE='BLight5'/>
+              </Transform>
+              <Transform DEF='BLight7' translation='2 0 0'>
+                <Transform USE='BLight6'/>
+              </Transform>
+              <Transform DEF='BLight8' translation='2 0 0'>
+                <Transform USE='BLight7'/>
+              </Transform>
+              <Transform DEF='BLight9' translation='2 0 0'>
+                <Transform USE='BLight8'/>
+              </Transform>
+              <Transform DEF='BLight10' translation='2 0 0'>
+                <Transform USE='BLight9'/>
+              </Transform>
+              <Transform DEF='BLight11' translation='-2 0 0'>
+                <Transform USE='BLight1'/>
+              </Transform>
+              <Transform DEF='BLight12' translation='-2 0 0'>
+                <Transform USE='BLight11'/>
+              </Transform>
+              <Transform DEF='BLight13' translation='-2 0 0'>
+                <Transform USE='BLight12'/>
+              </Transform>
+              <Transform DEF='BLight14' translation='-2 0 0'>
+                <Transform USE='BLight13'/>
+              </Transform>
+              <Transform DEF='BLight15' translation='-2 0 0'>
+                <Transform USE='BLight14'/>
+              </Transform>
+              <Transform DEF='BLight16' translation='-2 0 0'>
+                <Transform USE='BLight15'/>
+              </Transform>
+              <Transform DEF='BLight17' translation='-2 0 0'>
+                <Transform USE='BLight16'/>
+              </Transform>
+              <Transform DEF='BLight18' translation='-2 0 0'>
+                <Transform USE='BLight17'/>
+              </Transform>
+              <Transform DEF='BLight19' translation='-2 0 0'>
+                <Transform USE='BLight18'/>
+              </Transform>
+            </Transform>
+            <Transform DEF='BLine2'>
+              <Transform DEF='B2Light1' translation='0 2 8'>
+                <Transform USE='BLight10'/>
+              </Transform>
+              <Transform DEF='B2Light2' translation='-2 0 0'>
+                <Transform USE='B2Light1'/>
+              </Transform>
+              <Transform DEF='B2Light3' translation='-2 0 0'>
+                <Transform USE='B2Light2'/>
+              </Transform>
+              <Transform DEF='B2Light4' translation='0 2 8'>
+                <Transform USE='BLight19'/>
+              </Transform>
+              <Transform DEF='B2Light5' translation='2 0 0'>
+                <Transform USE='B2Light4'/>
+              </Transform>
+              <Transform DEF='B2Light6' translation='2 0 0'>
+                <Transform USE='B2Light5'/>
+              </Transform>
+            </Transform>
+            <Transform DEF='BLine3' translation='0 2 8'>
+              <Transform USE='BLine2'/>
+            </Transform>
+            <Transform DEF='BLine4' translation='0 2 8'>
+              <Transform USE='BLine3'/>
+            </Transform>
+          </Transform>
+          <Transform DEF='LightsButton' translation='-14.5 -1 22'>
+            <TouchSensor DEF='WhiteLightTS'/>
+            <TouchSensor DEF='BlueLightTS'/>
+            <Shape>
+              <Appearance>
+                <Material diffuseColor='1 1 1'/>
+              </Appearance>
+              <Box size='2.1 2.1 2.1'/>
+            </Shape>
+            <Transform DEF='LightsButtonText' scale='2.1 2.1 2.1' translation='-5 -3 -1'>
+              <Shape>
+                <Appearance>
+                  <Material diffuseColor='1 1 1'/>
+                </Appearance>
+                <Text string='"Press to turn the" "White Lights on" "and the Blue off"'/>
+              </Shape>
+            </Transform>
+          </Transform>
+        </Transform>
+      </Transform>
+      <Script DEF='WelcomeSc' directOutput='true'>
+        <field accessType='inputOnly' name='change' type='SFBool'/>
+        <field accessType='initializeOnly' name='input1' type='SFNode'>
+          <TouchSensor USE='WelcomeTS' containerField='input1'/>
+        </field>
+        <field accessType='initializeOnly' name='input' type='SFNode'>
+          <Switch USE='WelcomeSw' containerField='input'/>
+        </field>
+        <field accessType='initializeOnly' name='output' type='SFNode'>
+          <Switch USE='WelcomeSw' containerField='output'/>
+        </field><![CDATA[javascript:
+                function change(){
+                    if (change&&input1.isOver)
+                    output.whichChoice=(input.whichChoice+1)%2;
+                }]]>
+      </Script>
+      <Script DEF='RoofSc' directOutput='true'>
+        <field accessType='inputOnly' name='change' type='SFBool'/>
+        <field accessType='initializeOnly' name='input1' type='SFNode'>
+          <TouchSensor USE='RoofTS' containerField='input1'/>
+        </field>
+        <field accessType='initializeOnly' name='input' type='SFNode'>
+          <Switch USE='RoofSw' containerField='input'/>
+        </field>
+        <field accessType='initializeOnly' name='output' type='SFNode'>
+          <Switch USE='RoofSw' containerField='output'/>
+        </field><![CDATA[javascript:
+                function change(){
+                    if (change&&input1.isOver)
+                    output.whichChoice=(input.whichChoice+1)%2;
+                }]]>
+      </Script>
+      <Script DEF='WhiteLightSc' directOutput='true'>
+        <field accessType='inputOnly' name='change' type='SFBool'/>
+        <field accessType='initializeOnly' name='input1' type='SFNode'>
+          <TouchSensor USE='WhiteLightTS' containerField='input1'/>
+        </field>
+        <field accessType='initializeOnly' name='input' type='SFNode'>
+          <PointLight USE='WhiteLightPL' containerField='input'/>
+        </field>
+        <field accessType='initializeOnly' name='output' type='SFNode'>
+          <PointLight USE='WhiteLightPL' containerField='output'/>
+        </field><![CDATA[javascript:
+                function change(){
+                    if (change&&input1.isActive)
+                    output.on=!(input.on);
+                }]]>
+      </Script>
+      <Script DEF='BlueLightSc' directOutput='true'>
+        <field accessType='inputOnly' name='change' type='SFBool'/>
+        <field accessType='initializeOnly' name='input1' type='SFNode'>
+          <TouchSensor USE='BlueLightTS' containerField='input1'/>
+        </field>
+        <field accessType='initializeOnly' name='input' type='SFNode'>
+          <PointLight USE='BlueLightPL' containerField='input'/>
+        </field>
+        <field accessType='initializeOnly' name='output' type='SFNode'>
+          <PointLight USE='BlueLightPL' containerField='output'/>
+        </field><![CDATA[javascript:
+                function change(){
+                    if (change&&input1.isActive)
+                    output.on=!(input.on);
+                }]]>
+      </Script>
+      <Script DEF='DoorSc' directOutput='true'>
+        <field accessType='inputOnly' name='change' type='SFBool'/>
+        <field accessType='initializeOnly' name='input1' type='SFNode'>
+          <TouchSensor USE='DoorTo' containerField='input1'/>
+        </field>
+        <field accessType='initializeOnly' name='input' type='SFNode'>
+          <Switch USE='DoorSw' containerField='input'/>
+        </field>
+        <field accessType='initializeOnly' name='output' type='SFNode'>
+          <Switch USE='DoorSw' containerField='output'/>
+        </field><![CDATA[javascript:
+                function change () { 
+                    if (change&&input1.isOver)
+                        output.whichChoice=(input.whichChoice+1)%2;
+                }]]>
+      </Script>
+      <Script DEF='DoorMovie' directOutput='true'>
+        <field accessType='inputOnly' name='Operation' type='SFTime'/>
+        <field accessType='initializeOnly' name='Door' type='SFNode'>
+          <Switch USE='DoorSw' containerField='Door'/>
+        </field>
+        <field accessType='initializeOnly' name='WLights' type='SFNode'>
+          <PointLight USE='WhiteLightPL' containerField='WLights'/>
+        </field>
+        <field accessType='initializeOnly' name='BLights' type='SFNode'>
+          <PointLight USE='BlueLightPL' containerField='BLights'/>
+        </field><![CDATA[javascript:
+                function Operation (value,time) {
+                    for (i=0;i<2;i++) {
+                        if (Door.whichChoice==1) {
+                            WLights.on = FALSE;
+                            BLights.on = TRUE;
+                        }
+                        else {
+                            WLights.on = TRUE;
+                            BLights.on = FALSE;
+                        }
+                    }
+                }]]>
+      </Script>
+    </Transform>
+    <TimeSensor DEF='Chronos0' cycleInterval='2' loop='true' startTime='1'/>
+    <ROUTE fromNode='WelcomeTS' fromField='isActive' toNode='WelcomeSc' toField='change'/>
+    <ROUTE fromNode='MovieTo' fromField='touchTime' toNode='Movie' toField='set_startTime'/>
+    <ROUTE fromNode='WhiteLightTS' fromField='isActive' toNode='WhiteLightSc' toField='change'/>
+    <ROUTE fromNode='RoofTS' fromField='isActive' toNode='RoofSc' toField='change'/>
+    <ROUTE fromNode='BlueLightTS' fromField='isActive' toNode='BlueLightSc' toField='change'/>
+    <ROUTE fromNode='DoorTo' fromField='isActive' toNode='DoorSc' toField='change'/>
+    <ROUTE fromNode='Chronos0' fromField='cycleTime' toNode='DoorMovie' toField='Operation'/>
+  </Scene>
+</X3D>

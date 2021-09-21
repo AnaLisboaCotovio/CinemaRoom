@@ -1,0 +1,1195 @@
+#VRML V2.0 utf8
+
+WorldInfo{
+    info ["Author: Ana Maria Lisboa dos Santos Cotovio"]
+    title "Cinema"
+}
+
+Background{
+    skyColor 0.098, 0.772, 1
+}
+DEF World Transform {
+    children[
+        DEF Welcome Transform{
+            translation -15 25 0
+            scale 7 7 7
+            children[
+                DEF WelcomeTS TouchSensor{}
+                DEF WelcomeSw Switch{
+                    choice[
+                        DEF WelcomeText Transform{
+                            children[
+                                Shape{
+                                    geometry Text {
+                                        string ["Welcome to" "the Cinema!"]
+                                    }
+
+                                    appearance Appearance{
+                                        material Material{
+                                            diffuseColor  0.396, 0.117, 0.219
+                                        }
+                                    }
+                                }
+                            ]
+                        }
+
+                        DEF WelcomeButton Transform{
+                            translation 0.1 -2.5 3.052
+                            children[
+                                Shape{ #Cube
+                                    geometry Box{
+                                        size 0.3 0.3 0.3
+                                    }
+
+                                    appearance Appearance{
+                                        material Material{
+                                            diffuseColor 1.0 1.0 1.0
+                                            
+                                        }
+                                    }
+                                }
+
+                                DEF WelcomeButtonText Transform{
+                                    translation -0.7 -0.4 0
+                                    scale 0.3 0.3 0.3
+                                    children[
+                                        Shape{
+                                            geometry Text{
+                                                string ["Press to put" "the Text back"]
+                                            }
+
+                                            appearance Appearance{
+                                                material Material{
+                                                    diffuseColor 1.0 1.0 1.0
+                                                }
+                                            }
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                    whichChoice 0
+                }
+            ]
+        }
+
+        DEF Room Transform{
+            children[
+                DEF Walls Transform {
+                    children[
+                        DEF LeftWall Transform{
+                            translation -20 0 -5
+
+                            children[
+                                Shape{
+                                    geometry Box{
+                                        size 0.5 20 50
+                                    }
+
+                                    appearance Appearance{
+                                        material Material{
+                                            diffuseColor 0.141, 0.145, 0.149
+                                        }
+                                    }
+                                }
+                            ]
+                        }
+
+                        DEF RightWall Transform{
+                            translation 20 0 0
+
+                            children[
+                                DEF UpperPart Transform{
+                                    translation 0 4.65 -5
+                                    children[
+                                        Shape{
+                                            geometry Box{
+                                                size 0.5 10.7 50
+                                            }
+
+                                            appearance Appearance{
+                                                material Material{
+                                                    diffuseColor 0.141, 0.145, 0.149
+                                                }
+                                            }
+                                        }
+                                    ]
+                                }
+
+                                DEF BackPart Transform{
+                                    translation 0 -5 1.5
+                                    children[
+                                        Shape{
+                                            geometry Box{
+                                                size 0.5 9.4 37
+                                            }
+
+                                            appearance Appearance{
+                                                material Material{
+                                                    diffuseColor 0.141, 0.145, 0.149
+                                                }
+                                            }
+                                        }
+                                    ]
+                                }
+
+                                DEF FrontPart Transform{
+                                    translation 0 -5 -26.5
+                                    children[
+                                        Shape{
+                                            geometry Box{
+                                                size 0.5 9.4 7
+                                            }
+
+                                            appearance Appearance{
+                                                material Material{
+                                                    diffuseColor 0.141, 0.145, 0.149
+                                                }
+                                            }
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+
+                        DEF FrontWall Transform{
+                            translation 0 0 -30
+                            rotation 0 1 0 1.57
+
+                            children[
+                                Shape{
+                                    geometry Box{
+                                        size 0.5 20 40
+                                    }
+
+                                    appearance Appearance{
+                                        material Material{
+                                            diffuseColor 0.141, 0.145, 0.149
+                                        }
+                                    }
+                                }
+                            ]
+                        }
+
+                        DEF BackWall Transform{
+                            translation 0 0 50
+
+                            children[
+                                    USE FrontWall
+                            ]
+                        }
+                    ]
+                }
+
+                DEF RoofFloor Transform {
+                    children[
+                        DEF Floor Transform{
+                            translation 0 -10 -5
+                            rotation 0 0 1 1.57
+
+                            children[
+                                Shape{
+                                    geometry Box{
+                                        size 0.5 40 50
+                                    }
+
+                                    appearance Appearance{
+                                        material Material{
+                                            diffuseColor 0.396, 0.117, 0.219
+                                        }
+                                    }
+                                }
+                            ]
+                        }
+                        DEF Roof Transform{
+                            children[
+                                DEF RoofTS TouchSensor{}
+                                DEF RoofSw Switch{
+                                    choice[
+                                        DEF TheRoof Transform{
+                                            translation 0 20 0
+                                            children[
+                                                USE Floor
+                                            ]
+                                        }
+
+                                        DEF RoofButton Transform{
+                                            translation 14 7.5 21.3
+                                            scale 7 7 7 
+                                            children[
+                                                Shape{ #Cube
+                                                    geometry Box{
+                                                        size 0.3 0.3 0.3
+                                                    }
+
+                                                    appearance Appearance{
+                                                        material Material{
+                                                            diffuseColor 1.0 1.0 1.0
+                                                        }
+                                                    }
+                                                }
+
+                                                DEF RoofButtonText Transform{
+                                                    translation -0.75 -0.4 0   
+                                                    scale 0.3 0.3 0.3
+                                                    children[
+                                                        Shape{
+                                                            geometry Text{
+                                                                string["Press to put" "the Roof back"]
+                                                            }
+
+                                                            appearance Appearance{
+                                                                material Material{
+                                                                    diffuseColor 1.0 1.0 1.0
+                                                                }
+                                                            }
+                                                        }
+                                                    ]
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                    whichChoice 0
+                                }     
+                            ]
+                        }
+                    ]
+                }
+
+                DEF TheDoor Transform {
+                    children[
+                        DEF DoorTo TouchSensor{}
+                        DEF DoorSw Switch {
+                            choice[
+                                DEF Open Transform{
+                                    translation 43 0 -3
+                                    rotation 0 1 0 1.57
+                                    children[
+                                        DEF Door Transform{
+                                            translation 20 -5.2 -20
+                                            children[
+                                                Shape{
+                                                    geometry Box{
+                                                        size 0.7 9 6
+                                                    }
+
+                                                    appearance Appearance{
+                                                        material Material{
+                                                            diffuseColor 0.396, 0.262, 0.129
+                                                        }
+                                                    }
+                                                }
+
+                                                DEF DoorKnob Transform{
+                                                    translation 0 0 2
+                                                    rotation 0 0 1 1.57
+                                                    children[
+                                                        Shape{ 
+                                                            geometry Cylinder{
+                                                                radius 0.15
+                                                                height 1
+                                                            }
+
+                                                            appearance Appearance{
+                                                                texture ImageTexture{
+                                                                    url "DoorKnobColour.jpg"
+                                                                }
+                                                            }
+                                                        }
+
+                                                        DEF KnobInside Transform{
+                                                            translation 0 0.65 0
+                                                            children[
+                                                                Shape{
+                                                                    geometry Sphere{
+                                                                        radius 0.2
+                                                                    }
+
+                                                                    appearance Appearance{
+                                                                        texture ImageTexture{
+                                                                            url "DoorKnobColour.jpg"
+                                                                        }
+                                                                    }
+                                                                }
+                                                            ]
+                                                        }
+
+                                                        DEF KnobOutside Transform{
+                                                            translation 0 -1.33 0
+                                                            children[
+                                                                USE KnobInside
+                                                            ]
+                                                        }
+                                                    ]
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                }
+
+                                DEF Close Transform{
+                                    children[
+                                        DEF Door Transform{
+                                            translation 20 -5.2 -20
+                                            children[
+                                                Shape{
+                                                    geometry Box{
+                                                        size 0.7 9 6
+                                                    }
+
+                                                    appearance Appearance{
+                                                        material Material{
+                                                            diffuseColor 0.396, 0.262, 0.129
+                                                        }
+                                                    }
+                                                }
+
+                                                DEF DoorKnob Transform{
+                                                    translation 0 0 2
+                                                    rotation 0 0 1 1.57
+                                                    children[
+                                                        Shape{ 
+                                                            geometry Cylinder{
+                                                                radius 0.15
+                                                                height 1
+                                                            }
+
+                                                            appearance Appearance{
+                                                                texture ImageTexture{
+                                                                    url "DoorKnobColour.jpg"
+                                                                }
+                                                            }
+                                                        }
+
+                                                        DEF KnobInside Transform{
+                                                            translation 0 0.65 0
+                                                            children[
+                                                                Shape{
+                                                                    geometry Sphere{
+                                                                        radius 0.2
+                                                                    }
+
+                                                                    appearance Appearance{
+                                                                        texture ImageTexture{
+                                                                            url "DoorKnobColour.jpg"
+                                                                        }
+                                                                    }
+                                                                }
+                                                            ]
+                                                        }
+
+                                                        DEF KnobOutside Transform{
+                                                            translation 0 -1.33 0
+                                                            children[
+                                                                USE KnobInside
+                                                            ]
+                                                        }
+                                                    ]
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                }
+                            ]
+
+                            whichChoice 0
+                        }
+                    ]
+                }
+
+                DEF Stairs Transform {
+                    children[
+                        DEF Step1 Transform{
+                            translation 0 -9 -8
+                            children[
+                                Shape{
+                                    geometry Box{
+                                        size 40 1 8
+                                    }
+
+                                    appearance Appearance{
+                                        material Material{
+                                            diffuseColor 0.141, 0.145, 0.149
+                                        }
+                                    }
+                                }
+                            ]
+                        }
+
+                        DEF Step2 Transform{
+                            translation 0 -8 0
+                            children[
+                                Shape{
+                                    geometry Box{
+                                        size 40 2 8
+                                    }
+
+                                    appearance Appearance{
+                                        material Material{
+                                            diffuseColor 0.141, 0.145, 0.149
+                                        }
+                                    }
+                                }
+                            ]
+                        }
+
+                        DEF Step3 Transform{
+                            translation 0 -7 8
+                            children[
+                                Shape{
+                                    geometry Box{
+                                        size 40 3 8
+                                    }
+
+                                    appearance Appearance{
+                                        material Material{
+                                            diffuseColor 0.141, 0.145, 0.149
+                                        }
+                                    }
+                                }
+                            ]
+                        }
+
+                        DEF Step4 Transform{
+                            translation 0 -6 16
+                            children[
+                                Shape{
+                                    geometry Box{
+                                        size 40 4 8
+                                    }
+
+                                    appearance Appearance{
+                                        material Material{
+                                            diffuseColor 0.141, 0.145, 0.149
+                                        }
+                                    }
+                                }
+                            ]
+                        }
+                    ]
+                }
+
+                DEF Chairs Transform {
+                    children[
+                        DEF Line1 Transform{
+                            children[
+                                DEF Chair1 Transform{
+                                    children[
+                                        DEF Seat Transform{
+                                            translation 8 -8 -6
+                                            children[
+                                                Shape{
+                                                    geometry Box{
+                                                        size 8 2 4
+                                                    }
+
+                                                    appearance Appearance{
+                                                        material Material{
+                                                            diffuseColor 0.396, 0.117, 0.219
+                                                        }
+                                                    }
+                                                }
+                                            ]
+                                        }
+
+                                        DEF Back Transform{
+                                            translation 8 -5 -4.5
+                                            rotation 1 0 0 1.57
+                                            children[
+                                                Shape{
+                                                    geometry Box{
+                                                        size 4 1 4
+                                                    }
+
+                                                    appearance Appearance{
+                                                        material Material{
+                                                            diffuseColor 0.396, 0.117, 0.219
+                                                        }
+                                                    }
+                                                }
+                                            ]
+                                        }
+
+                                        DEF ArmRight Transform{
+                                            translation 11 -6 -6
+                                            rotation 1 0 0 1.57
+                                            children[
+                                                Shape{
+                                                    geometry Cylinder{
+                                                        radius 1
+                                                        height 4
+                                                    }
+
+                                                    appearance Appearance{
+                                                        material Material{
+                                                            diffuseColor 0.396, 0.117, 0.219
+                                                        }
+                                                    }
+                                                }
+                                            ]
+                                        }
+                                
+                                        DEF ArmLeft Transform{
+                                            translation 5 -6 -6
+                                            rotation 1 0 0 1.57
+                                            children[
+                                                Shape{
+                                                    geometry Cylinder{
+                                                        radius 1
+                                                        height 4
+                                                    }
+
+                                                    appearance Appearance{
+                                                        material Material{
+                                                            diffuseColor 0.396, 0.117, 0.219
+                                                        }
+                                                    }
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                }
+
+                                DEF Chair2 Transform{
+                                    translation -8 0 0
+                                    children[
+                                        USE Chair1
+                                    ]
+                                }
+
+                                DEF Chair3 Transform{
+                                    translation -8 0 0
+                                    children[
+                                        USE Chair2
+                                    ]
+                                }
+                            ]
+                        }
+                        
+                        DEF Line2 Transform{
+                            translation 0 2 8
+                            children[
+                                USE Line1
+                            ]
+                        }
+
+                        DEF Line3 Transform{
+                            translation 0 2 8
+                            children[
+                                USE Line2
+                            ]
+                        }
+
+                        DEF Line4 Transform{
+                            translation 0 2 8
+                            children[
+                                USE Line3
+                            ]
+                        }
+                    ]
+                }
+
+                DEF Portraits Transform{
+                    children[
+                        DEF PortraitsLeft Transform{
+                            children[
+                                DEF Portrait1 Transform{
+                                    translation -19.5 3 5
+                                    children[
+                                        DEF Frame1 Transform{
+                                            children[
+                                                Shape{
+                                                    geometry Box{
+                                                        size 0.1 5.2 3.7
+                                                    }
+
+                                                    appearance Appearance{
+                                                        material Material{
+                                                            diffuseColor 0.396, 0.262, 0.129
+                                                        }
+                                                    }
+                                                }
+                                            ]
+                                        }
+
+                                        DEF Picture1 Transform{
+                                            translation 0.05 0 0
+                                            children[
+                                                Shape{
+                                                    geometry Box{
+                                                        size 0.03 5 3.5
+                                                    }
+
+                                                    appearance Appearance{
+                                                        texture ImageTexture{
+                                                            url "JohnnyDepp.jpg"
+                                                        }
+                                                    }
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                }
+
+                                DEF Portrait2 Transform{
+                                    translation -19.5 3 -15
+                                    children[
+                                        DEF Frame2 Transform{
+                                            children[
+                                                Shape{
+                                                    geometry Box{
+                                                        size 0.1 5.2 3.7
+                                                    }
+
+                                                    appearance Appearance{
+                                                        material Material{
+                                                            diffuseColor 0.396, 0.262, 0.129
+                                                        }
+                                                    }
+                                                }
+                                            ]
+                                        }
+
+                                        DEF Picture2 Transform{
+                                            translation 0.05 0 0
+                                            children[
+                                                Shape{
+                                                    geometry Box{
+                                                        size 0.03 5 3.5
+                                                    }
+
+                                                    appearance Appearance{
+                                                        texture ImageTexture{
+                                                            url "WillSmith.jpg"
+                                                        }
+                                                    }
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+
+                        DEF PortraitsRight Transform{
+                            translation 0 0 -3
+                            rotation 0 1 0 3.14
+                            children[
+                                DEF Portrait1 Transform{
+                                    translation -19.5 3 5
+                                    children[
+                                        DEF Frame1 Transform{
+                                            children[
+                                                Shape{
+                                                    geometry Box{
+                                                        size 0.1 5.2 3.7
+                                                    }
+
+                                                    appearance Appearance{
+                                                        material Material{
+                                                            diffuseColor 0.396, 0.262, 0.129
+                                                        }
+                                                    }
+                                                }
+                                            ]
+                                        }
+
+                                        DEF Picture1 Transform{
+                                            translation 0.05 0 0
+                                            children[
+                                                Shape{
+                                                    geometry Box{
+                                                        size 0.03 5 3.5
+                                                    }
+
+                                                    appearance Appearance{
+                                                        texture ImageTexture{
+                                                            url "MarylStreep.jpg"
+                                                        }
+                                                    }
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                }
+
+                                DEF Portrait2 Transform{
+                                    translation -19.5 3 -15
+                                    children[
+                                        DEF Frame2 Transform{
+                                            children[
+                                                Shape{
+                                                    geometry Box{
+                                                        size 0.1 5.2 3.7
+                                                    }
+
+                                                    appearance Appearance{
+                                                        material Material{
+                                                            diffuseColor 0.396, 0.262, 0.129
+                                                        }
+                                                    }
+                                                }
+                                            ]
+                                        }
+
+                                        DEF Picture2 Transform{
+                                            translation 0.05 0 0
+                                            children[
+                                                Shape{
+                                                    geometry Box{
+                                                        size 0.03 5 3.5
+                                                    }
+
+                                                    appearance Appearance{
+                                                        texture ImageTexture{
+                                                            url "JuliaRoberts.jpg"
+                                                        }
+                                                    }
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                }
+
+                DEF Screen Transform{
+                    translation 0 0 -29.5
+                    children[
+                        DEF MovieTo TouchSensor {}
+                            Shape{
+                                geometry Box {
+                                    size 30 15 0.1
+                                }
+
+                                appearance Appearance{
+                                    texture DEF Movie MovieTexture{
+                                        loop TRUE 
+                                        url "ScoobyDooTheme.mpeg"
+                                        stopTime 1 
+                                        startTime 0
+                                    }
+                                }
+                            }
+                    ]
+                }
+
+                DEF Lights Transform {
+                    children[
+                        DEF WhiteLights Transform{
+                            children[
+                                DEF WLight1 Transform{
+                                    translation -19 9 19
+                                    children[
+                                        Shape{
+                                            geometry Sphere{
+                                                radius 1
+                                            }
+
+                                            appearance Appearance{
+                                                material Material{
+                                                    diffuseColor 1, 1, 0.929
+                                                    emissiveColor 1, 1, 0.929
+                                                }
+                                            }
+                                        }
+
+                                        DEF WhiteLightPL PointLight {
+                                            color 1, 1, 0.929
+                                            intensity 1.0
+                                            radius 1 
+                                            on FALSE
+                                        }
+                                    ]
+                                }
+
+                                DEF WLight2 Transform{
+                                    translation 0 0 -48
+                                    children[
+                                        USE WLight1
+                                    ]
+                                }
+
+                                DEF WLight3 Transform{
+                                    translation 38 0 0
+                                    children[
+                                        USE WLight2
+                                    ]
+                                }
+
+                                DEF WLight4 Transform{
+                                    translation 38 0 0
+                                    children[
+                                        USE WLight1
+                                    ]
+                                }
+                            ]
+                        }
+
+                        DEF BlueLights Transform{
+                            children[
+                                DEF BLine1 Transform{
+                                    children[
+                                        DEF BLight1 Transform{
+                                            translation 0 -8.5 -11.5
+                                            children[
+                                                Shape{
+                                                    geometry Box{
+                                                        size 0.5 0.1 0.5
+                                                    }
+
+                                                    appearance Appearance{
+                                                        material Material{
+                                                            diffuseColor 0, 0.094, 0.976
+                                                            emissiveColor 0, 0.094, 0.976
+                                                        }
+                                                    }
+                                                }
+
+                                                DEF BlueLightPL PointLight {
+                                                    color 0, 0.094, 0.976
+                                                    intensity 0.5
+                                                    radius 1 
+                                                    on TRUE
+                                                }
+                                            ]
+                                        }
+
+                                        DEF BLight2 Transform{
+                                            translation 2 0 0
+                                            children[
+                                                USE BLight1
+                                            ]
+                                        }
+
+                                        DEF BLight3 Transform{
+                                            translation 2 0 0
+                                            children[
+                                                USE BLight2
+                                            ]
+                                        }
+
+                                        DEF BLight4 Transform{
+                                            translation 2 0 0
+                                            children[
+                                                USE BLight3
+                                            ]
+                                        }
+
+                                        DEF BLight5 Transform{
+                                            translation 2 0 0
+                                            children[
+                                                USE BLight4
+                                            ]
+                                        }
+
+                                        DEF BLight6 Transform{
+                                            translation 2 0 0
+                                            children[
+                                                USE BLight5
+                                            ]
+                                        }
+
+                                        DEF BLight7 Transform{
+                                            translation 2 0 0
+                                            children[
+                                                USE BLight6
+                                            ]
+                                        }
+
+                                        DEF BLight8 Transform{
+                                            translation 2 0 0
+                                            children[
+                                                USE BLight7
+                                            ]
+                                        }
+
+                                        DEF BLight9 Transform{
+                                            translation 2 0 0
+                                            children[
+                                                USE BLight8
+                                            ]
+                                        }
+
+                                        DEF BLight10 Transform{
+                                            translation 2 0 0
+                                            children[
+                                                USE BLight9
+                                            ]
+                                        }
+
+                                        DEF BLight11 Transform{
+                                            translation -2 0 0
+                                            children[
+                                                USE BLight1
+                                            ]
+                                        }
+
+                                        DEF BLight12 Transform{
+                                            translation -2 0 0
+                                            children[
+                                                USE BLight11
+                                            ]
+                                        }
+
+                                        DEF BLight13 Transform{
+                                            translation -2 0 0
+                                            children[
+                                                USE BLight12
+                                            ]
+                                        }
+
+                                        DEF BLight14 Transform{
+                                            translation -2 0 0
+                                            children[
+                                                USE BLight13
+                                            ]
+                                        }
+
+                                        DEF BLight15 Transform{
+                                            translation -2 0 0
+                                            children[
+                                                USE BLight14
+                                            ]
+                                        }
+
+                                        DEF BLight16 Transform{
+                                            translation -2 0 0
+                                            children[
+                                                USE BLight15
+                                            ]
+                                        }
+
+                                        DEF BLight17 Transform{
+                                            translation -2 0 0
+                                            children[
+                                                USE BLight16
+                                            ]
+                                        }
+
+                                        DEF BLight18 Transform{
+                                            translation -2 0 0
+                                            children[
+                                                USE BLight17
+                                            ]
+                                        }
+
+                                        DEF BLight19 Transform{
+                                            translation -2 0 0
+                                            children[
+                                                USE BLight18
+                                            ]
+                                        }
+                                    ]
+                                }
+
+                                DEF BLine2 Transform{
+                                    children[
+                                        DEF B2Light1 Transform{
+                                            translation 0 2 8
+                                            children[
+                                                USE BLight10
+                                            ]
+                                        }
+
+                                        DEF B2Light2 Transform{
+                                            translation -2 0 0
+                                            children[
+                                                USE B2Light1
+                                            ]
+                                        }
+
+                                        DEF B2Light3 Transform{
+                                            translation -2 0 0
+                                            children[
+                                                USE B2Light2
+                                            ]
+                                        }
+
+                                        DEF B2Light4 Transform{
+                                            translation 0 2 8
+                                            children[
+                                                USE BLight19
+                                            ]
+                                        }
+
+                                        DEF B2Light5 Transform{
+                                            translation 2 0 0
+                                            children[
+                                                USE B2Light4
+                                            ]
+                                        }
+
+                                        DEF B2Light6 Transform{
+                                            translation 2 0 0
+                                            children[
+                                                USE B2Light5
+                                            ]
+                                        }
+                                    ]
+                                }
+
+                                DEF BLine3 Transform{
+                                    translation 0 2 8
+                                    children[
+                                        USE BLine2
+                                    ]
+                                }
+
+                                DEF BLine4 Transform{
+                                    translation 0 2 8
+                                    children[
+                                        USE BLine3
+                                    ]
+                                }
+                            ]
+                        }
+
+                        DEF LightsButton Transform{
+                            translation -14.5 -1 22
+                            children[
+                                DEF WhiteLightTS TouchSensor{}
+                                DEF BlueLightTS TouchSensor{}
+                                Shape{
+                                    geometry Box{
+                                        size 2.1 2.1 2.1
+                                    }
+
+                                    appearance Appearance{
+                                        material Material{
+                                            diffuseColor 1.0 1.0 1.0
+                                        }
+                                    }
+                                }
+
+                                DEF  LightsButtonText Transform{
+                                    translation -5 -3 -1
+                                    scale 2.1 2.1 2.1
+                                    children[
+                                        Shape{
+                                            geometry Text{
+                                                string ["Press to turn the" "White Lights on" "and the Blue off"]
+                                            }
+
+                                            appearance Appearance{
+                                                material Material{
+                                                    diffuseColor 1.0 1.0 1.0
+                                                }
+                                            }
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
+
+#SCRIPTS ***********************************************************
+
+        DEF WelcomeSc Script{
+            eventIn SFBool change
+            field SFNode input1 USE WelcomeTS
+            field SFNode input USE WelcomeSw
+            field SFNode output USE WelcomeSw
+            directOutput TRUE 
+
+            url "javascript:
+                function change(){
+                    if (change&&input1.isOver)
+                    output.whichChoice=(input.whichChoice+1)%2;
+                }"
+        }
+
+        DEF RoofSc Script{
+            eventIn SFBool change
+            field SFNode input1 USE RoofTS
+            field SFNode input USE RoofSw
+            field SFNode output USE RoofSw
+            directOutput TRUE 
+
+            url "javascript:
+                function change(){
+                    if (change&&input1.isOver)
+                    output.whichChoice=(input.whichChoice+1)%2;
+                }"
+        }
+
+        DEF WhiteLightSc Script{
+            eventIn SFBool change
+            field SFNode input1 USE WhiteLightTS
+            field SFNode input USE WhiteLightPL
+            field SFNode output USE WhiteLightPL
+            directOutput TRUE
+
+            url "javascript:
+                function change(){
+                    if (change&&input1.isActive)
+                    output.on=!(input.on);
+                }"
+        }
+
+        DEF BlueLightSc Script{
+            eventIn SFBool change
+            field SFNode input1 USE BlueLightTS
+            field SFNode input USE BlueLightPL
+            field SFNode output USE BlueLightPL
+            directOutput TRUE
+
+            url "javascript:
+                function change(){
+                    if (change&&input1.isActive)
+                    output.on=!(input.on);
+                }"
+        }    
+
+        DEF DoorSc Script{
+            eventIn SFBool change
+            field SFNode input1 USE DoorTo
+            field SFNode input USE DoorSw
+            field SFNode output USE DoorSw
+            directOutput TRUE
+            url "javascript:
+                function change () { 
+                    if (change&&input1.isOver)
+                        output.whichChoice=(input.whichChoice+1)%2;
+                }"
+        } 
+
+        DEF DoorMovie Script{
+            eventIn SFTime Operation
+            field SFNode Door USE DoorSw
+            field SFNode WLights USE WhiteLightPL
+            field SFNode BLights USE BlueLightPL
+            directOutput TRUE
+            url "javascript:
+                function Operation (value,time) {
+                    for (i=0;i<2;i++) {
+                        if (Door.whichChoice==1) {
+                            WLights.on = FALSE;
+                            BLights.on = TRUE;
+                        }
+                        else {
+                            WLights.on = TRUE;
+                            BLights.on = FALSE;
+                        }
+                    }
+                }"
+        }   
+    ]
+}
+
+ROUTE MovieTo.touchTime TO Movie.startTime
+ROUTE WelcomeTS.isActive TO WelcomeSc.change
+ROUTE RoofTS.isActive TO RoofSc.change
+ROUTE WhiteLightTS.isActive TO WhiteLightSc.change
+ROUTE BlueLightTS.isActive TO BlueLightSc.change
+ROUTE DoorTo.isActive TO DoorSc.change
+
+DEF Chronos0 TimeSensor {	
+   cycleInterval 2 loop TRUE startTime 1 stopTime 0}
+ ROUTE Chronos0.cycleTime TO DoorMovie.Operation
